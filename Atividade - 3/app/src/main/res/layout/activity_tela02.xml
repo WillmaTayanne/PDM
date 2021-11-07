@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layoutTela02"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/tvColor"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="1.0"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvColorGenetation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nova Cor"
+                android:textColor="#000000"
+                android:textSize="30dp"
+                android:textStyle="normal|bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:gravity="center">
+
+        <SeekBar
+            android:id="@+id/seekBar1"
+            android:layout_width="319dp"
+            android:layout_height="wrap_content"
+            android:max="255"
+            android:progress="0"
+            android:progressTint="#F00"
+            android:thumbTint="#F00" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:gravity="center">
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="322dp"
+            android:layout_height="wrap_content"
+            android:max="255"
+            android:progress="0"
+            android:progressTint="#0F0"
+            android:thumbTint="#0F0" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2">
+
+        <SeekBar
+            android:id="@+id/seekBar3"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:max="255"
+            android:progress="0"
+            android:progressTint="#00F"
+            android:thumbTint="#00F" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:showDividers="middle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/bntsalvar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.4"
+            android:text="Salvar" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+
+        <Button
+            android:id="@+id/bntcancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:text="Cancelar" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
