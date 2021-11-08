@@ -22,7 +22,6 @@ class tela02 : AppCompatActivity() {
     private lateinit var bntsalvar: Button
     private lateinit var bntcancelar: Button
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tela02)
@@ -77,6 +76,9 @@ class tela02 : AppCompatActivity() {
         private lateinit var seekBar2: SeekBar
         private lateinit var seekBar3: SeekBar
         private  lateinit var corgerada: TextView
+        private lateinit var textViewRed: TextView
+        private lateinit var textViewGreen: TextView
+        private lateinit var textViewBlue: TextView
 
         override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) { // toda vez que alterar faz
             this.tela = findViewById(R.id.tvColor)
@@ -88,6 +90,14 @@ class tela02 : AppCompatActivity() {
             this.tela.setBackgroundColor(Color.rgb(this.seekBar1.progress, seekBar2.progress, seekBar3.progress))
 
             this.corgerada.setText("#" + java.lang.Integer.toHexString(Color.rgb(this.seekBar1.progress, seekBar2.progress, seekBar3.progress)).substring(2,8).toUpperCase())
+
+            this.textViewRed = findViewById(R.id.textViewRed)
+            this.textViewGreen = findViewById(R.id.textViewGreen)
+            this.textViewBlue = findViewById(R.id.textViewBlue)
+
+            this.textViewRed.text = this.seekBar1.progress.toString()
+            this.textViewGreen.text = this.seekBar2.progress.toString()
+            this.textViewBlue.text = this.seekBar3.progress.toString()
 
         }
 
