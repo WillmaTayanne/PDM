@@ -1,15 +1,12 @@
 package com.example.pratica06
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
-import androidx.core.view.children
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,11 +18,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         this.listView = findViewById(R.id.listView)
         this.listView.setOnItemLongClickListener { parent, view, position, id -> clickItem(parent,view,position,id) }
         this.dao = DAO(this)
         this.atualiza()
+
+        if(listView.adapter.count < 1) {
+            this.atualiza( Cor("Cor Exemplo","#0000FF") )
+        }
 
         this.buttonAdd = findViewById(R.id.button)
         this.buttonAdd.setOnClickListener {
@@ -51,8 +51,13 @@ class MainActivity : AppCompatActivity() {
         this.atualiza()
     }
 
-    private fun atualiza() {
+    private fun atualiza(colorExample: Cor? = null) {
         val list = this.dao.get()
+
+        if(colorExample != null) {
+            list.add(colorExample)
+        }
+
         this.listView.adapter = CorAdapter(this, list)
     }
 
